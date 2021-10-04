@@ -1,5 +1,4 @@
 
-
 const personalMovieDB = {
     count: 0,
     movies: {},
@@ -11,7 +10,7 @@ const personalMovieDB = {
         while (personalMovieDB.count == '' || personalMovieDB.count == null || isNaN(personalMovieDB.count)) {
             personalMovieDB.count = +prompt("How much movies you have watch?", "");
         }
-    },
+    }, 
     remeberMyFilms: function() {
         for (let i = 0; i < 2; i++) {
             const a = prompt("What is last movie?", ""),
