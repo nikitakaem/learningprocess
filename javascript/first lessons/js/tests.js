@@ -1,14 +1,7 @@
 "use strict";
 
 
-let personalMovieDB = {
-    count: 1,
-    movies: {
-        wer: 1
-    },
-    actors: {},
-    genres: [],
-    privat: false 
-};
+const num = '12.2px';
 
-console.log(personalMovieDB.movies);
+console.log(parseInt(num));
+console.log(parseFloat(num));
