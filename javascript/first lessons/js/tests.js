@@ -1,10 +1,14 @@
 "use strict";
 
 
-&& //оба варианты правдивы
-|| //один или другой правдивы
-=== // строгое соответствие
-! //обращает значение в обратное
-//true в false и наоборот
+let personalMovieDB = {
+    count: 1,
+    movies: {
+        wer: 1
+    },
+    actors: {},
+    genres: [],
+    privat: false 
+};
 
-!= //знак не равен(обратно ==)
+console.log(personalMovieDB.movies);
