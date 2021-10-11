@@ -14,10 +14,7 @@ P.S. Функции вызывать не обязательно*/
 
 'use strict';
 
-"use strict";
-
 let numberOfFilms;
-
 
 function start() {
     numberOfFilms = prompt('How much movies you watched?', '');
@@ -30,35 +27,50 @@ function start() {
 
 start();
 
-
 const personalMovieDB = {
         count: numberOfFilms,
         movies: {},
         actors: {},
         genres: [],
-        privat: false 
+        privat: true 
     };
 
-for (let i = 0; i < 2; i++) {
-    const a = prompt('Which last film you watched?', ''),
-          b = prompt('How much rating you give for it?', '');
-    if (a.length < 50 && a.length != 0 && a != null && a != '' && b != '') {
-        personalMovieDB.movies[a] = b;
+function rememberMyFilms() {
+    for (let i = 0; i < 2; i++) {
+        const a = prompt('Which last film you watched?', ''),
+              b = prompt('How much rating you give for it?', '');
+        if (a.length < 50 && a.length != 0 && a != null && a != '' && b != '') {
+            personalMovieDB.movies[a] = b;
+        } else {
+            i--;
+        } 
+    }
+}
+
+rememberMyFilms();
+
+function detectPersonalLevel() {
+    if (personalMovieDB.count < 10 && personalMovieDB.count != 0) {
+        console.log('Not much films watched');
+    } else if (personalMovieDB.count > 30) {
+        console.log('You are filmman');
+    } else  if (10 < personalMovieDB.count < 30)  {
+        console.log('You are classic watcher');  
     } else {
-        i--;
-    } 
+        console.log('error');
+    }
 }
 
+detectPersonalLevel();
 
-
-if (personalMovieDB.count < 10 && personalMovieDB.count != 0) {
-    console.log('Not much films watched');
-} else if (personalMovieDB.count > 30) {
-    console.log('You are filmman');
-} else  if (10 < personalMovieDB.count < 30)  {
-    console.log('You are classic watcher');  
-} else {
-    console.log('error');
+function showMyDB() {
+    if (personalMovieDB.privat == false) {
+        console.log(personalMovieDB);
+    } else {
+        return;
+    }
 }
+
+showMyDB();
 
 console.log(personalMovieDB);
