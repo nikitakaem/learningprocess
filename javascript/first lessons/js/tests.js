@@ -1,7 +1,16 @@
 "use strict";
 
 
-const num = '12.2px';
+const options = {
+    name: 'test',
+    width: 1024,
+    height: 1024,
+    colors: {
+        border: 'black',
+        bg: 'red'
+    }
+};
 
-console.log(parseInt(num));
-console.log(parseFloat(num));
+delete options.name;
+
+
