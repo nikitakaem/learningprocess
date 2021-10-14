@@ -1,16 +1,12 @@
 "use strict";
 
-
-const options = {
-    name: 'test',
-    width: 1024,
-    height: 1024,
-    colors: {
-        border: 'black',
-        bg: 'red'
-    }
+const soldier = {
+    health: 400,
+    armor: 100
+};
+const john = {
+    health: 100
 };
 
-delete options.name;
-
+const john2 = Object.create(soldier);
 
